@@ -1,0 +1,6 @@
+{
+  "name": "Kondavil Ramakrishna Maha Vidyalayam",
+  "description": "Official website for Kondavil Ramakrishna Maha Vidyalayam, Jaffna, Sri Lanka. Excellence in traditional values and modern education.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
