@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events Calendar | Kondavil Ramakrishna Maha Vidyalayam</title>
+  <meta name="description" content="Official events calendar, prize giving, athletic meets, term evaluations, and cultural celebrations of Kondavil Ramakrishna Maha Vidyalayam." />
+  <link rel="icon" type="image/png" href="images/school-logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <!-- <aside class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span class="badge-tag">Events Calendar</span>
+        <span>Annual prize giving, athletic meets, cultural celebrations, and term examinations.</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="index.html" class="top-bar-link">← Return to Home</a>
+      </div>
+    </div>
+  </aside> -->
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-wrapper">
+          <img src="images/school-logo.png" alt="School Logo" class="school-logo-img" />
+          <div class="brand-text">
+            <span class="school-name-english">Kondavil Ramakrishna Maha Vidyalayam</span>
+            <span class="school-name-tamil" style="font-size:1.1rem; color:var(--school-primary); font-weight:700;">கோண்டாவில் இராமகிருஷ்ண மகா வித்தியாலயம்</span>
+            <span class="school-subtext">Government Provincial Type 1C School • Nallur Division • Jaffna Zone</span>
+          </div>
+        </a>
+        <div class="header-action">
+          <a href="contact.html" class="btn btn-primary btn-sm">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!-- ==========================================================================
+       Main Navigation Bar (Clean English Navigation)
+       ========================================================================== -->
+  <nav class="main-nav-bar" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <button class="mobile-nav-toggle" aria-label="Open mobile navigation">
+        ☰
+      </button>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">
+            About Us <span class="dropdown-arrow"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="about.html#overview">School Overview</a></li>
+            <li class="dropdown-item"><a href="pages/history.html">School History</a></li>
+            <li class="dropdown-item"><a href="about.html#vision-mission">Vision, Mission & Motto</a></li>
+            <li class="dropdown-item"><a href="pages/principal-message.html">Principal's Message</a></li>
+            <li class="dropdown-item"><a href="pages/school-profile.html">Institutional Profile</a></li>
+            <li class="dropdown-item"><a href="pages/past-principals.html">Past Principals Roll of Honour</a></li>
+            <li class="dropdown-item"><a href="pages/founder.html">Founder Tribute</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="academics.html" class="nav-link">
+            Academics <span class="dropdown-arrow"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="academics.html#structure">Grade Structure (1 - 13)</a></li>
+            <li class="dropdown-item"><a href="academics.html#streams">Advanced Level Streams</a></li>
+            <li class="dropdown-item"><a href="academics.html#curriculum">Curriculum & Methodology</a></li>
+            <li class="dropdown-item"><a href="academics.html#teachers">Teachers & Staff Directory</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="school-life.html" class="nav-link">
+            School Life <span class="dropdown-arrow"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="school-life.html#activities">Clubs & Societies</a></li>
+            <li class="dropdown-item"><a href="school-life.html#sports">Sports & Athletics</a></li>
+            <li class="dropdown-item"><a href="school-life.html#cultural">Cultural Celebrations</a></li>
+            <li class="dropdown-item"><a href="school-life.html#anthem">Vidyalayam Anthem</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="news.html" class="nav-link">News & Press</a>
+        </li>
+        <li class="nav-item">
+          <a href="events.html" class="nav-link">Events Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a href="resources.html" class="nav-link">
+            Resources <span class="dropdown-arrow"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="resources.html#plans">School Development Plans</a></li>
+            <li class="dropdown-item"><a href="resources.html#publications">Souvenirs & Publications</a></li>
+            <li class="dropdown-item"><a href="resources.html#downloads">Official PDF Downloads</a></li>
+            <li class="dropdown-item"><a href="resources.html#links">National Educational Links</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="gallery.html" class="nav-link">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Off-canvas Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-drawer" aria-label="Mobile menu drawer">
+    <div class="mobile-nav-header">
+      <div style="font-weight:700; color:var(--school-primary); font-size:1.1rem;">Menu</div>
+      <button class="mobile-nav-close" style="font-size:1.5rem; color:var(--school-primary); line-height:1;" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="index.html" class="active">Home</a></li>
+      <li class="mobile-nav-item">
+        <a href="about.html">About Us</a>
+        <ul class="mobile-submenu">
+          <li><a href="about.html#overview">School Overview</a></li>
+          <li><a href="pages/history.html">School History</a></li>
+          <li><a href="about.html#vision-mission">Vision & Mission</a></li>
+          <li><a href="pages/principal-message.html">Principal's Message</a></li>
+          <li><a href="pages/school-profile.html">School Profile</a></li>
+          <li><a href="pages/past-principals.html">Past Principals</a></li>
+          <li><a href="pages/founder.html">Founder Tribute</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="academics.html">Academics</a>
+        <ul class="mobile-submenu">
+          <li><a href="academics.html#structure">Grade Structure (1 - 13)</a></li>
+          <li><a href="academics.html#streams">Advanced Level Streams</a></li>
+          <li><a href="academics.html#teachers">Teachers Directory</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="school-life.html">School Life</a>
+        <ul class="mobile-submenu">
+          <li><a href="school-life.html#activities">Clubs & Activities</a></li>
+          <li><a href="school-life.html#sports">Sports & Athletics</a></li>
+          <li><a href="school-life.html#anthem">Vidyalayam Anthem</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item"><a href="news.html">News & Press</a></li>
+      <li class="mobile-nav-item"><a href="events.html">Events Calendar</a></li>
+      <li class="mobile-nav-item"><a href="resources.html">Resources & Downloads</a></li>
+      <li class="mobile-nav-item"><a href="gallery.html">Gallery</a></li>
+      <li class="mobile-nav-item"><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <main id="main-content">
+
+  <!-- Page Banner -->
+  <div class="page-banner">
+    <div class="container">
+      <h1 class="page-title">School Events Calendar</h1>
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> &gt; <span>Events Calendar</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pretitle">School Almanac</span>
+          <h2 class="section-title">Academic & Cultural Events</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">
+            Dates and official schedules for examinations, annual sports, and institutional ceremonies.
+          </p>
+        </div>
+
+        <!-- All Events Container -->
+        <div id="all-events-container" class="card-grid-2">
+          <!-- Fallback Cards -->
+          <div class="card event-card" style="display:flex; flex-direction:row; align-items:stretch;">
+            <div style="background:var(--school-primary); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.25rem; min-width:90px; text-align:center; border-right:3px solid var(--school-secondary);">
+              <span style="font-size:1.75rem; font-weight:800; font-family:var(--font-heading); line-height:1;">15</span>
+              <span style="font-size:0.875rem; font-weight:700; color:var(--school-secondary); text-transform:uppercase; margin-top:0.25rem;">OCT</span>
+              <span style="font-size:0.75rem; opacity:0.85;">2024</span>
+            </div>
+            <div class="card-body" style="padding:1.25rem;">
+              <div class="card-meta">
+                <span class="badge-tag">Academic</span>
+                <span style="font-size:0.8125rem; color:var(--text-muted);">🕒 09:00 AM - 01:30 PM</span>
+              </div>
+              <h3 class="card-title" style="font-size:1.15rem; margin-bottom:0.25rem;">Annual Prize Giving & Diamond Jubilee Souvenir Release</h3>
+              <p style="font-size:0.85rem; color:var(--school-primary); font-weight:600; margin-bottom:0.5rem;">வருடாந்த பரிசளிப்பு விழா & மலர் வெளியீடு</p>
+              <p style="font-size:0.8125rem; color:var(--text-muted); margin-bottom:0.65rem;">📍 School Main Auditorium, Kondavil</p>
+              <p class="card-text" style="font-size:0.875rem; margin-bottom:0.75rem;">
+                Official ceremonial distribution of awards for academic excellence across Grades 1–13 and the formal release of the Vaira Vizha magazine.
+              </p>
+              <a href="documents/prizeReport.pdf" class="btn btn-sm btn-outline-primary" style="align-self:flex-start;">View Official Report (PDF) →</a>
+            </div>
+          </div>
+
+          <div class="card event-card" style="display:flex; flex-direction:row; align-items:stretch;">
+            <div style="background:var(--school-primary); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.25rem; min-width:90px; text-align:center; border-right:3px solid var(--school-secondary);">
+              <span style="font-size:1.75rem; font-weight:800; font-family:var(--font-heading); line-height:1;">28</span>
+              <span style="font-size:0.875rem; font-weight:700; color:var(--school-secondary); text-transform:uppercase; margin-top:0.25rem;">OCT</span>
+              <span style="font-size:0.75rem; opacity:0.85;">2024</span>
+            </div>
+            <div class="card-body" style="padding:1.25rem;">
+              <div class="card-meta">
+                <span class="badge-tag">Cultural</span>
+                <span style="font-size:0.8125rem; color:var(--text-muted);">🕒 08:30 AM - 12:00 PM</span>
+              </div>
+              <h3 class="card-title" style="font-size:1.15rem; margin-bottom:0.25rem;">Saraswathi Pooja & Vijayadasami Cultural Festivities</h3>
+              <p style="font-size:0.85rem; color:var(--school-primary); font-weight:600; margin-bottom:0.5rem;">சரஸ்வதி பூசை மற்றும் கலை நிகழ்வுகள்</p>
+              <p style="font-size:0.8125rem; color:var(--text-muted); margin-bottom:0.65rem;">📍 School Shrine & Main Hall</p>
+              <p class="card-text" style="font-size:0.875rem; margin-bottom:0.75rem;">
+                Devotional prayers dedicated to Saraswathi, Goddess of Learning, alongside vocal recitals, veena performances, and student classical dances.
+              </p>
+              <a href="school-life.html" class="btn btn-sm btn-outline-primary" style="align-self:flex-start;">View Cultural Life →</a>
+            </div>
+          </div>
+
+          <div class="card event-card" style="display:flex; flex-direction:row; align-items:stretch;">
+            <div style="background:var(--school-primary); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.25rem; min-width:90px; text-align:center; border-right:3px solid var(--school-secondary);">
+              <span style="font-size:1.75rem; font-weight:800; font-family:var(--font-heading); line-height:1;">18</span>
+              <span style="font-size:0.875rem; font-weight:700; color:var(--school-secondary); text-transform:uppercase; margin-top:0.25rem;">NOV</span>
+              <span style="font-size:0.75rem; opacity:0.85;">2024</span>
+            </div>
+            <div class="card-body" style="padding:1.25rem;">
+              <div class="card-meta">
+                <span class="badge-tag">Examinations</span>
+                <span style="font-size:0.8125rem; color:var(--text-muted);">🕒 08:00 AM - 01:30 PM</span>
+              </div>
+              <h3 class="card-title" style="font-size:1.15rem; margin-bottom:0.25rem;">Third Term Evaluation Examinations</h3>
+              <p style="font-size:0.85rem; color:var(--school-primary); font-weight:600; margin-bottom:0.5rem;">தவணை இறுதிப் பரீட்சைகள்</p>
+              <p style="font-size:0.8125rem; color:var(--text-muted); margin-bottom:0.65rem;">📍 All Examination Halls (Grades 1 – 13)</p>
+              <p class="card-text" style="font-size:0.875rem; margin-bottom:0.75rem;">
+                Comprehensive annual term evaluations across all academic subjects assessing student progress before year-end grade promotions.
+              </p>
+              <a href="academics.html" class="btn btn-sm btn-outline-primary" style="align-self:flex-start;">Academics Details →</a>
+            </div>
+          </div>
+
+          <div class="card event-card" style="display:flex; flex-direction:row; align-items:stretch;">
+            <div style="background:var(--school-primary); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.25rem; min-width:90px; text-align:center; border-right:3px solid var(--school-secondary);">
+              <span style="font-size:1.75rem; font-weight:800; font-family:var(--font-heading); line-height:1;">15</span>
+              <span style="font-size:0.875rem; font-weight:700; color:var(--school-secondary); text-transform:uppercase; margin-top:0.25rem;">JAN</span>
+              <span style="font-size:0.75rem; opacity:0.85;">2025</span>
+            </div>
+            <div class="card-body" style="padding:1.25rem;">
+              <div class="card-meta">
+                <span class="badge-tag">Cultural</span>
+                <span style="font-size:0.8125rem; color:var(--text-muted);">🕒 08:00 AM - 11:30 AM</span>
+              </div>
+              <h3 class="card-title" style="font-size:1.15rem; margin-bottom:0.25rem;">Thai Pongal Harvest Festival Celebration</h3>
+              <p style="font-size:0.85rem; color:var(--school-primary); font-weight:600; margin-bottom:0.5rem;">தைப்பொங்கல் பெருவிழா</p>
+              <p style="font-size:0.8125rem; color:var(--text-muted); margin-bottom:0.65rem;">📍 School Courtyard</p>
+              <p class="card-text" style="font-size:0.875rem; margin-bottom:0.75rem;">
+                Annual agrarian thanksgiving celebrated by students, parents, and faculty with cultural games and kolam competitions.
+              </p>
+              <a href="school-life.html" class="btn btn-sm btn-outline-primary" style="align-self:flex-start;">Cultural Traditions →</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:3.5rem; background:var(--surface-alt); border-radius:var(--radius-md); padding:1.5rem; border:1px dashed var(--school-primary); font-size:0.875rem; color:var(--text-secondary);">
+          <strong>💡 Teacher Maintenance Note:</strong><br />
+          School events can be added or updated by editing the <code>schoolEvents</code> array in <code>js/events.js</code>.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="images/school-logo.png" alt="School Crest" class="footer-logo" />
+            <div>
+              <div class="footer-title-english" style="font-size:1.05rem; color:#ffffff; font-weight:700;">J/ Kondavil Ramakrishna Maha Vidyalayam</div>
+              <div class="footer-title-tamil" style="font-size:0.95rem; color:var(--school-secondary); font-weight:600;">யா/ கோண்டாவில் இராமகிருஷ்ண மகா வித்தியாலயம்</div>
+            </div>
+          </div>
+          <p style="font-size:0.875rem; color:rgba(255,255,255,0.75);">
+            Kondavil East, Palali Road, Jaffna, Sri Lanka (Postal Code: 40000).
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="events.html">Events Calendar</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Key Documents</h4>
+          <ul class="footer-links">
+            <li><a href="documents/prizeReport.pdf" target="_blank" rel="noopener">Prize Day Report (PDF)</a></li>
+            <li><a href="documents/schoolPlan2024.pdf" target="_blank" rel="noopener">Annual Plan 2024</a></li>
+            <li><a href="documents/five-year-plan.pdf" target="_blank" rel="noopener">Five-Year Plan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Administration</h4>
+          <p style="font-size:0.875rem; color:rgba(255,255,255,0.75); line-height:1.6;">
+            Jaffna Educational Zone, Nallur Division, Northern Province.
+          </p>
+          <p style="font-size:0.875rem; color:rgba(255,255,255,0.75); line-height:1.6; margin-top:0.5rem;">
+            Telephone: <a href="tel:0212053949">0212053949</a>
+          </p>
+          <div style="margin-top:1rem;">
+            <a href="contact.html" class="btn btn-sm btn-secondary">Contact Information</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div>© <span class="current-year">2026</span> Kondavil Ramakrishna Maha Vidyalayam. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="js/main.js"></script>
+  <script defer src="js/events.js"></script>
+</body>
+</html>
