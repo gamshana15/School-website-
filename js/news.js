@@ -11,7 +11,6 @@
  */
 
 const schoolNews = [
-<<<<<<< HEAD
     {
     id: 7,
     titleTamil: "தேசிய உற்பத்தித்திறன் போட்டியில் தேசிய மட்டத்தில் மூன்றாம் இடம்",
@@ -48,8 +47,6 @@ const schoolNews = [
     detailsUrl: "images/newspaper/5b.jpeg",
     readMoreText: "View Newspaper clipping"
   },
-=======
->>>>>>> 82ce82be921d6de3ffa377e6ea0fccc2fc5b9045
   {
     id: 1,
     titleTamil: "வருடாந்த பரிசளிப்பு விழா 2024 & வைரவிழா மலர் வெளியீடு",
@@ -62,7 +59,6 @@ const schoolNews = [
     detailsUrl: "documents/prizeReport.pdf",
     readMoreText: "View Prize Report (PDF)"
   },
-<<<<<<< HEAD
   // {
   //   id: 2,
   //   titleTamil: "பாடசாலை மட்ட இணைப்பாடவிதான மற்றும் விளையாட்டுச் சாதனைகள்",
@@ -99,32 +95,6 @@ const schoolNews = [
   //   detailsUrl: "documents/five-year-plan.pdf",
   //   readMoreText: "Download Strategic Plan (PDF)"
   // },
-=======
-  {
-    id: 2,
-    titleTamil: "பாடசாலை மட்ட இணைப்பாடவிதான மற்றும் விளையாட்டுச் சாதனைகள்",
-    titleEnglish: "Zonal & Provincial Co-Curricular Excellence Recognition",
-    date: "2024-09-20",
-    dateDisplay: "20 September 2024",
-    category: "Achievements",
-    image: "images/newspaper/2.jpeg",
-    description: "நல்லூர் கோட்ட மற்றும் யாழ்ப்பாண வலய மட்டத்தில் நடைபெற்ற கலை, கலாசார மற்றும் விளையாட்டுப் போட்டிகளில் பங்குபற்றி சாதனை படைத்த எமது மாணவச் செல்வங்கள் கௌரவிக்கப்பட்டனர்.",
-    detailsUrl: "school-life.html",
-    readMoreText: "Read Co-Curricular Details"
-  },
-  {
-    id: 3,
-    titleTamil: "ஐந்தாண்டு மூலோபாய அபிவிருத்தித் திட்டம் (2025-2029) அங்கீகாரம்",
-    titleEnglish: "Five Year Strategic School Development Plan (2025-2029)",
-    date: "2024-08-10",
-    dateDisplay: "10 August 2024",
-    category: "Administration",
-    image: "images/newspaper/3.jpeg",
-    description: "பாடசாலையின் உட்கட்டமைப்பு, நவீன கணனி ஆய்வுகூட வசதிகள், விஞ்ஞான பரிசோதனைக்கூட விரிவாக்கம் மற்றும் கல்வித் தர மேம்பாட்டை உள்ளடக்கிய ஐந்தாண்டு திட்ட வரைபு உத்தியோகபூர்வமாக வெளியிடப்பட்டது.",
-    detailsUrl: "documents/five-year-plan.pdf",
-    readMoreText: "Download Strategic Plan (PDF)"
-  },
->>>>>>> 82ce82be921d6de3ffa377e6ea0fccc2fc5b9045
   {
     id: 4,
     titleTamil: "மாணவர் நலன்புரி மற்றும் சமூக உதவிக் குழுவின் கல்வி ஊக்குவிப்புத் திட்டம்",
