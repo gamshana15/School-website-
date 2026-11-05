@@ -901,6 +901,7 @@ button {
   transition: transform 0.4s ease;
 }
 
+<<<<<<< HEAD
 .past-principals-grid .card-img-wrapper img {
   object-fit: contain;
 }
@@ -909,14 +910,19 @@ button {
   display: none;
 }
 
+=======
+>>>>>>> 82ce82be921d6de3ffa377e6ea0fccc2fc5b9045
 .card:hover .card-img-wrapper img {
   transform: scale(1.05);
 }
 
+<<<<<<< HEAD
 .past-principals-grid .card:hover .card-img-wrapper img {
   transform: none;
 }
 
+=======
+>>>>>>> 82ce82be921d6de3ffa377e6ea0fccc2fc5b9045
 .card-body {
   padding: 1.5rem;
   display: flex;
@@ -1107,6 +1113,7 @@ button {
 /* ==========================================================================
    Audio Player Card
    ========================================================================== */
+<<<<<<< HEAD
 .school-anthem-image {
   display: block;
   width: 100%;
@@ -1117,6 +1124,8 @@ button {
   box-shadow: var(--shadow-sm);
 }
 
+=======
+>>>>>>> 82ce82be921d6de3ffa377e6ea0fccc2fc5b9045
 .audio-card {
   background: linear-gradient(135deg, var(--surface) 0%, var(--surface-alt) 100%);
   border: 1px solid var(--border-color);
@@ -1408,10 +1417,13 @@ audio {
   line-height: 1.5;
 }
 
+<<<<<<< HEAD
 .site-footer a[href^="tel:"] {
   color: #ffffff;
 }
 
+=======
+>>>>>>> 82ce82be921d6de3ffa377e6ea0fccc2fc5b9045
 .footer-bottom {
   background-color: #160c12;
   padding: 1.25rem 0;
