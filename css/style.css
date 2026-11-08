@@ -1665,29 +1665,111 @@ audio {
     padding-right: 1rem;
   }
 
-  .header-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
+  .site-header {
+    padding: 0.75rem 0;
   }
 
-  .brand-wrapper {
+  .header-inner {
     flex-direction: column;
     text-align: center;
     gap: 0.75rem;
   }
 
+  .brand-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
   .school-logo-img {
-    width: 72px;
-    height: 72px;
+    width: 60px;
+    height: 60px;
   }
 
   .school-name-tamil {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .school-name-english {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.45rem, 5.5vw, 1.75rem);
+  }
+
+  main h2[style] {
+    font-size: 1.5rem !important;
+  }
+
+  main h3[style] {
+    font-size: clamp(1.1rem, 4.5vw, 1.35rem) !important;
+  }
+
+  .page-banner {
+    padding: 2rem 0;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .card-grid-2,
+  .card-grid-3,
+  .card-grid-4,
+  .profile-facts-grid {
+    gap: 1rem;
+  }
+
+  .card-img-wrapper {
+    height: 180px;
+  }
+
+  .card-body {
+    padding: 1.15rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-box {
+    padding: 1.25rem 1rem;
+  }
+
+  .pillar-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .gallery-grid {
+    gap: 1rem;
+  }
+
+  .gallery-thumb {
+    height: 180px;
+  }
+
+  .site-footer {
+    padding-top: 3rem;
+  }
+
+  .footer-grid {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   /* Hero carousel mobile display */
@@ -1812,14 +1894,14 @@ audio {
   }
 
   .principal-photo-col {
-    padding: 2rem 1rem 1rem;
+    padding: 1.25rem 0.75rem 0.75rem;
     background: linear-gradient(135deg, var(--school-primary-dark) 0%, var(--school-primary) 100%);
   }
 
   .principal-photo-col img {
     width: auto;
-    max-width: 240px;
-    height: 290px;
+    max-width: 200px;
+    height: 245px;
     object-fit: cover;
     object-position: top center;
     border-radius: var(--radius-md);
@@ -1830,7 +1912,7 @@ audio {
   }
 
   .principal-text-col {
-    padding: 1.75rem 1.25rem;
+    padding: 1.25rem 1rem;
     text-align: center;
   }
 
@@ -1859,7 +1941,7 @@ audio {
 
   .footer-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .footer-brand > div {
