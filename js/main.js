@@ -10,16 +10,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileBackdrop = document.querySelector('.mobile-nav-backdrop');
   const mobileCloseBtn = document.querySelector('.mobile-nav-close');
 
+  if (mobileToggleBtn) {
+    mobileToggleBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  if (mobileDrawer) {
+    mobileDrawer.setAttribute('aria-hidden', 'true');
+    mobileDrawer.setAttribute('inert', '');
+  }
+
   function openMobileNav() {
     if (mobileDrawer) mobileDrawer.classList.add('active');
     if (mobileBackdrop) mobileBackdrop.classList.add('active');
+    if (mobileDrawer) {
+      mobileDrawer.removeAttribute('inert');
+      mobileDrawer.setAttribute('aria-hidden', 'false');
+    }
+    if (mobileToggleBtn) mobileToggleBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    if (mobileCloseBtn) mobileCloseBtn.focus();
   }
 
   function closeMobileNav() {
+    const wasOpen = mobileDrawer && mobileDrawer.classList.contains('active');
     if (mobileDrawer) mobileDrawer.classList.remove('active');
     if (mobileBackdrop) mobileBackdrop.classList.remove('active');
-    document.body.style.overflow = '';
+    if (mobileDrawer) {
+      mobileDrawer.setAttribute('aria-hidden', 'true');
+      mobileDrawer.setAttribute('inert', '');
+    }
+    if (mobileToggleBtn) mobileToggleBtn.setAttribute('aria-expanded', 'false');
+    if (wasOpen) document.body.style.overflow = '';
+    if (wasOpen && mobileToggleBtn && mobileDrawer && mobileDrawer.contains(document.activeElement)) {
+      mobileToggleBtn.focus();
+    }
   }
 
   if (mobileToggleBtn) {
@@ -33,6 +57,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileBackdrop) {
     mobileBackdrop.addEventListener('click', closeMobileNav);
   }
+
+  if (mobileDrawer) {
+    mobileDrawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMobileNav);
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1200) closeMobileNav();
+  });
 
   // Close mobile drawer on Escape key
   document.addEventListener('keydown', (e) => {
@@ -192,4 +226,3 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoplay();
   }
 });
-
