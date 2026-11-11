@@ -4,6 +4,37 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Keep the active navigation item in sync with the current page.
+  const normalizePath = (path) => path.toLowerCase().replace(/\/$/, '/index.html');
+  const currentPath = normalizePath(window.location.pathname);
+  const navigationLinks = document.querySelectorAll('.main-nav-bar a[href], .mobile-nav-drawer a[href]');
+  const matchingLinks = [];
+
+  navigationLinks.forEach((link) => {
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#')) return;
+
+    const linkPath = normalizePath(new URL(href, window.location.href).pathname);
+    if (linkPath === currentPath) matchingLinks.push(link);
+  });
+
+  matchingLinks.forEach((link) => {
+    link.classList.add('active');
+    link.setAttribute('aria-current', 'page');
+
+    const parentLink = link.closest('.dropdown-menu, .mobile-submenu');
+    if (parentLink) {
+      const parentNavLink = parentLink.parentElement.querySelector(':scope > a');
+      if (parentNavLink) {
+        parentNavLink.classList.add('active');
+        parentNavLink.setAttribute('aria-current', 'page');
+      }
+    }
+  });
+
   // 1. Mobile Navigation Drawer Toggle
   const mobileToggleBtn = document.querySelector('.mobile-nav-toggle');
   const mobileDrawer = document.querySelector('.mobile-nav-drawer');
