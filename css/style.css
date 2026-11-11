@@ -858,6 +858,31 @@ button {
   align-items: start;
 }
 
+.contact-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-details,
+.contact-map-column,
+.contact-map-card,
+.contact-card-copy {
+  min-width: 0;
+}
+
+.contact-card-copy p {
+  overflow-wrap: anywhere;
+}
+
+.contact-map-frame {
+  max-width: 100%;
+}
+
+.contact-map-iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
 .profile-facts-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1622,6 +1647,10 @@ audio {
     gap: 2rem;
   }
 
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .principal-message-split {
     grid-template-columns: 1fr;
   }
@@ -1669,6 +1698,18 @@ audio {
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .contact-details .card {
+    padding: 1.25rem !important;
+  }
+
+  .contact-card-row {
+    gap: 0.85rem !important;
+  }
+
+  .contact-map-frame {
+    height: clamp(240px, 70vw, 320px) !important;
   }
 
   .site-header {
