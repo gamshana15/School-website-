@@ -1419,7 +1419,7 @@ audio {
   overflow-wrap: anywhere;
 }
 
-.site-footer a[href^="tel:"] {
+.footer-email {
   color: #ffffff;
 }
 
