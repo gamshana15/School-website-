@@ -6,12 +6,15 @@ from datetime import datetime
 
 # Only these two folders will be optimised
 folders = [
-    Path("images/prize-giving-2026"),
-    Path("images/teachers-day-2026")
+    Path("images/sports-day-2026"),
+    Path("images/prize-giving-2025"),
+    Path("images/teachers-day-2025"),
+    Path("images/prize-giving-2024")
 ]
 
 # Keep original photos safe outside the website project
-backup = Path("..") / (
+# Keep original photos safe in Downloads, outside the website project
+backup = Path.home() / "Downloads" / (
     f"School-website-originals-{datetime.now():%Y%m%d-%H%M%S}.zip"
 )
 
