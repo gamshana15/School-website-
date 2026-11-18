@@ -1290,6 +1290,20 @@ audio {
   color: var(--text-primary);
 }
 
+.lightbox-modal.image-only .lightbox-content {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.lightbox-modal.image-only .lightbox-content img {
+  max-height: 90vh;
+}
+
+.lightbox-modal.image-only .lightbox-caption {
+  display: none;
+}
+
 .lightbox-close {
   position: absolute;
   top: 10px;

@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeLightbox() {
     if (!lightboxModal) return;
     lightboxModal.classList.remove('active');
+    lightboxModal.classList.remove('image-only');
     document.body.style.overflow = '';
   }
 
@@ -147,7 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const imgSrc = item.getAttribute('data-image') || item.getAttribute('href') || (item.querySelector('img') && item.querySelector('img').src);
       const caption = item.getAttribute('data-caption') || item.getAttribute('title') || (item.querySelector('.gallery-title') && item.querySelector('.gallery-title').textContent);
-      if (imgSrc) {
+      if (imgSrc && lightboxModal) {
+        lightboxModal.classList.toggle('image-only', item.hasAttribute('data-image-only'));
         openLightbox(imgSrc, caption);
       }
     });
