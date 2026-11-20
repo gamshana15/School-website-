@@ -1617,6 +1617,10 @@ audio {
 @media (max-width: 860px) {
 
   /* Hero carousel adjustments on tablets & phones */
+  .principal-message-photo {
+    object-position: center 22%;
+  }
+
   .hero-carousel-container {
     min-height: 560px;
     height: auto;
