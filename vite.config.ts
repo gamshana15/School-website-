@@ -1,9 +1,11 @@
+
 import fs from 'fs';
 import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   const rootDir = import.meta.dirname;
+
   return {
     plugins: [
       {
@@ -12,10 +14,14 @@ export default defineConfig(() => {
           server.middlewares.use((req, res, next) => {
             if (req.url) {
               const cleanUrl = req.url.split('?')[0];
-              // If requesting CSS directly from <link rel="stylesheet">
+
               if (cleanUrl.endsWith('.css')) {
-                const relativePath = cleanUrl.startsWith('/') ? cleanUrl.slice(1) : cleanUrl;
+                const relativePath = cleanUrl.startsWith('/')
+                  ? cleanUrl.slice(1)
+                  : cleanUrl;
+
                 const filePath = path.resolve(rootDir, relativePath);
+
                 if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
                   res.setHeader('Content-Type', 'text/css; charset=utf-8');
                   res.end(fs.readFileSync(filePath, 'utf8'));
@@ -27,7 +33,35 @@ export default defineConfig(() => {
           });
         },
       },
+
+      {
+        name: 'copy-static-assets',
+        apply: 'build',
+        closeBundle() {
+          const folders = [
+            'js',
+            'css',
+            'images',
+            'audio',
+            'documents',
+          ];
+
+          for (const folder of folders) {
+            const source = path.resolve(rootDir, folder);
+            const destination = path.resolve(rootDir, 'dist', folder);
+
+            if (fs.existsSync(source)) {
+              fs.cpSync(source, destination, {
+                recursive: true,
+              });
+
+              console.log(`Copied ${folder} to dist/${folder}`);
+            }
+          }
+        },
+      },
     ],
+
     build: {
       rollupOptions: {
         input: {
@@ -42,16 +76,17 @@ export default defineConfig(() => {
           contact: path.resolve(rootDir, 'contact.html'),
           history: path.resolve(rootDir, 'pages/history.html'),
           principalMessage: path.resolve(rootDir, 'pages/principal-message.html'),
+          deputyPrincipalMessage: path.resolve(rootDir, 'pages/deputy-principal-message.html'),
           schoolProfile: path.resolve(rootDir, 'pages/school-profile.html'),
           pastPrincipals: path.resolve(rootDir, 'pages/past-principals.html'),
           founder: path.resolve(rootDir, 'pages/founder.html'),
         },
       },
     },
+
     server: {
       port: 3000,
       host: '0.0.0.0',
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
