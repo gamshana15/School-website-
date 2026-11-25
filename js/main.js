@@ -5,7 +5,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Keep the active navigation item in sync with the current page.
-  const normalizePath = (path) => path.toLowerCase().replace(/\/$/, '/index.html');
+  
+const normalizePath = (path) => {
+  return path.toLowerCase()
+    .replace(/\/index\.html$/, '/')
+    .replace(/\.html$/, '')
+    .replace(/\/+$/, '') || '/';
+};
+
   const currentPath = normalizePath(window.location.pathname);
   const navigationLinks = document.querySelectorAll('.main-nav-bar a[href], .mobile-nav-drawer a[href]');
   const matchingLinks = [];
