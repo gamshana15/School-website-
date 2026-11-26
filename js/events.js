@@ -23,7 +23,7 @@ const schoolEvents = [
     category: "Academic",
     status: "past",
     description: "2026 ஆம் ஆண்டிற்கான கல்வியாண்டு பரிசளிப்பு வைபவம் பிரமுகர்கள் முன்னிலையில் இடம்பெற்றது.",
-    link: "documents/prizeReport.pdf",
+    link: "documents/prize day report 2026.pdf",
     linkText: "View Report"
   },
   {
