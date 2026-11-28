@@ -8,6 +8,22 @@
  */
 
 let schoolNews = [];
+function formatNewsDate(value) {
+  if (!value) return '';
+
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC'
+  }).format(date);
+}
 
 // Protect HTML from unsafe content.
 function escapeNewsHTML(value) {
@@ -71,7 +87,7 @@ function renderNewsCards(containerId, limit) {
               ${escapeNewsHTML(item.category)}
             </span>
             <span class="news-date">
-              📅 ${escapeNewsHTML(item.dateDisplay || item.date)}
+              📅 ${escapeNewsHTML(formatNewsDate(item.date) || item.dateDisplay)}
             </span>
           </div>
 
