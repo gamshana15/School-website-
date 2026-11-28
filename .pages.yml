@@ -206,15 +206,19 @@ content:
 
 
       - name: gallerySection
-        label: "பிரிவு | Gallery Section"
+        label: "Gallery Section"
         type: select
         required: true
         default: "Ceremonial Archives"
         options:
+          multiple: false
           values:
-            - "Ceremonial Archives"
-            - "Achievements"
-            - "Press Photos"
+            - name: "Ceremonial Archives"
+              label: "Ceremonial Archives"
+            - name: "Achievements"
+              label: "Achievements"
+            - name: "Press Photos"
+              label: "Press Photos"
 
       - name: updatedDate
         label: "புதுப்பித்த திகதி | Last Updated Date"
