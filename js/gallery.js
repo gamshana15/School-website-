@@ -40,11 +40,16 @@ function renderGalleryPhoto(photo) {
 
     const title = escapeGalleryHTML(photo.title);
     const category = escapeGalleryHTML(photo.category);
+
     const caption = escapeGalleryHTML(
         photo.caption || photo.title
     );
+
+    // Automatically generate alternative text
     const alt = escapeGalleryHTML(
-        photo.alt || photo.caption || photo.title || 'School photograph'
+        photo.caption ||
+        photo.title ||
+        'School photograph'
     );
 
     return `
@@ -80,39 +85,21 @@ function renderGalleryPhoto(photo) {
     `;
 }
 
-function renderGalleryAlbum(album) {
+function renderGalleryAlbum(album, index) {
     const photos = Array.isArray(album.photos)
         ? album.photos
         : [];
 
     return `
-        <section class="section ${album.alternateBackground ? 'section-alt' : ''}">
+        <section class="section ${index % 2 !== 0 ? 'section-alt' : ''}">
 
             <div class="container">
 
                 <div class="section-header">
 
-                    ${album.pretitle ? `
-                        <span class="section-pretitle">
-                            ${escapeGalleryHTML(album.pretitle)}
-                        </span>
-                    ` : ''}
-
-                    ${album.description ? `
-                        <p class="section-subtitle">
-                            ${escapeGalleryHTML(album.description)}
-                        </p>
-                    ` : ''}
-
                     <h2 class="section-title">
-                        ${escapeGalleryHTML(album.titleEnglish || album.titleTamil)}
+                        ${escapeGalleryHTML(album.titleEnglish)}
                     </h2>
-
-                    ${album.titleTamil && album.titleEnglish ? `
-                        <p class="section-subtitle" lang="ta">
-                            ${escapeGalleryHTML(album.titleTamil)}
-                        </p>
-                    ` : ''}
 
                     <div class="section-divider"></div>
 

@@ -182,7 +182,7 @@ content:
         type: string
 
 
-  - name: gallery
+    - name: gallery
     label: "புகைப்படத் தொகுப்பு | Gallery"
     type: file
     path: public/content/gallery.json
@@ -191,25 +191,9 @@ content:
 
     fields:
       - name: titleEnglish
-        label: "Album Title"
+        label: "தொகுப்பின் தலைப்பு | Album Title"
         type: string
         required: true
-
-      - name: titleTamil
-        label: "தமிழ் தலைப்பு"
-        type: string
-
-      - name: pretitle
-        label: "Section Label"
-        type: string
-
-      - name: description
-        label: "Album Description"
-        type: text
-
-      - name: alternateBackground
-        label: "Alternate Background"
-        type: boolean
 
       - name: photos
         label: "புகைப்படங்கள் | Photographs"
@@ -223,21 +207,18 @@ content:
             required: true
 
           - name: title
-            label: "Photo Title"
+            label: "புகைப்படத் தலைப்பு | Photo Title"
             type: string
 
           - name: category
-            label: "Category"
+            label: "பிரிவு | Category"
             type: string
 
           - name: caption
-            label: "Photo Caption"
+            label: "புகைப்பட விபரம் | Photo Caption"
             type: text
-
-          - name: alt
-            label: "Image Description"
-            type: string
 
           - name: imageOnly
             label: "Image Only"
             type: boolean
+            default: false
