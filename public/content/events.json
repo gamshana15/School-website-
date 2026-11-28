@@ -3,78 +3,87 @@
     "id": 1,
     "titleTamil": "வருடாந்த பரிசளிப்பு விழா",
     "titleEnglish": "Annual Prize Giving",
+    "date": "2026-08-07",
     "time": "09:00 AM - 01:30 PM",
     "venue": "School Main Auditorium, Kondavil",
     "category": "Academic",
     "status": "past",
     "description": "2026 ஆம் ஆண்டிற்கான கல்வியாண்டு பரிசளிப்பு வைபவம் பிரமுகர்கள் முன்னிலையில் இடம்பெற்றது.",
     "link": "documents/prize day report 2026.pdf",
-    "linkText": "View Report",
-    "date": "2026-08-07"
+    "linkText": "View Report"
   },
   {
     "id": 2,
     "titleTamil": "சரஸ்வதி பூசை மற்றும் விஜயதசமி கலை நிகழ்வுகள்",
     "titleEnglish": "Saraswathi Pooja & Vijayadasami Cultural Festivities",
+    "date": "2026-10-28",
     "time": "10:00 AM - 1:00 PM",
     "venue": "School Shrine & Auditorium",
     "category": "Cultural",
     "status": "past",
     "description": "கலைமகளின் அருளாசியோடு பாடசாலையில் சரஸ்வதி பூசை சிறப்பு வழிபாடுகளும், மாணவர்களின் பண்ணிசை, நடன நிகழ்வுகளும் இடம்பெற்றன.",
     "link": "school-life.html",
-    "linkText": "View Activities",
-    "date": "2026-10-28"
+    "linkText": "View Activities"
   },
   {
     "id": 3,
     "titleTamil": "மூன்றாம் தவணை இறுதிப் பரீட்சைகள் ஆரம்பம்",
     "titleEnglish": "Third Term Final Evaluation Examinations",
+    "date": "2026-11-18",
     "time": "08:00 AM - 01:30 PM",
     "venue": "All Classrooms (Grades 1 - 13)",
     "category": "Examinations",
     "status": "past",
     "description": "மாணவர்களின் கல்வி அடைவுகளை மதிப்பீடு செய்யும் 2024 ஆம் ஆண்டிற்கான மூன்றாம் தவணைப் பரீட்சைகள் ஆரம்பமாகின்றன.",
     "link": "academics.html",
-    "linkText": "Academic Info",
-    "date": "2026-11-18"
+    "linkText": "Academic Info"
   },
   {
     "id": 4,
     "titleTamil": "தைப்பொங்கல் பெருவிழா மற்றும் பாரம்பரிய பண்பாட்டு நிகழ்வுகள்",
     "titleEnglish": "Thai Pongal Cultural Festival & Traditions",
+    "date": "2026-01-15",
     "time": "08:00 AM - 11:30 AM",
     "venue": "School Grounds & Courtyard",
     "category": "Cultural",
     "status": "past",
     "description": "உழவர் பெருநாளை முன்னிட்டு பாடசாலை சமூகத்தின் கூட்டுப் பொங்கல் வழிபாடும் மாணவர்களின் கோலப்போட்டி, கலை நிகழ்வுகளும் நடைபெற்றன.",
     "link": "school-life.html",
-    "linkText": "School Life",
-    "date": "2026-01-15"
+    "linkText": "School Life"
   },
   {
     "id": 5,
     "titleTamil": "வருடாந்த இல்ல மெய்வல்லுநர் விளையாட்டுப் போட்டி",
     "titleEnglish": "Annual Inter-House Athletic & Sports Meet",
+    "date": "2026-02-20",
     "time": "01:00 PM - 06:00 PM",
     "venue": "School Sports Ground, Kondavil East",
     "category": "Sports",
     "status": "past",
     "description": "மாணவர்களின் விளையாட்டுத் திறமைகளை வெளிக்கொணரும் வருடாந்த இல்ல மெய்வல்லுநர் இறுதிப் போட்டிகள் மற்றும் பரிசளிப்பு விழா.",
     "link": "school-life.html",
-    "linkText": "Sports Info",
-    "date": "2026-02-20"
+    "linkText": "Sports Info"
   },
   {
     "id": 6,
     "titleTamil": "ஆசிரியர் தின விழா மற்றும் மாணவர் கலை நிகழ்வுகள்",
     "titleEnglish": "Teachers' Day Celebration",
+    "date": "2026-10-06",
     "time": "08:30 AM - 12:30 AM",
     "venue": "Vidyalayam Main Hall",
     "category": "School Event",
     "status": "past",
     "description": "மாணவர்கள் தங்கள் ஆசிரியர்களுக்கு நன்றி தெரிவித்து, அவர்களின் அர்ப்பணிப்பையும் வழிகாட்டலையும் போற்றும் சிறப்பு நிகழ்வு. கலை நிகழ்ச்சிகளுடன் ஆசிரியர்கள் கௌரவிக்கப்படுகின்றனர்.",
     "link": "gallery.html",
-    "linkText": "Gallery",
-    "date": "2026-10-06"
+    "linkText": "Gallery"
+  },
+  {
+    "titleTamil": "விஞ்ஞானக் கண்காட்சி",
+    "titleEnglish": "Science Exhibition - TEST",
+    "date": "2026-11-28",
+    "time": "09:00 AM - 12:00 PM",
+    "venue": "School Main Hall",
+    "category": "Academic",
+    "description": "இது ஒரு மாதிரி நிகழ்வாகும்."
   }
 ]
