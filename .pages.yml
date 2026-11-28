@@ -1,0 +1,53 @@
+media:
+  input: images
+  output: /images
+
+content:
+  - name: news
+    label: "செய்திகள் | News"
+    type: file
+    path: public/content/news.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: News ID
+        type: number
+
+      - name: titleTamil
+        label: தமிழ் தலைப்பு
+        type: string
+        required: true
+
+      - name: titleEnglish
+        label: English Title
+        type: string
+
+      - name: date
+        label: Date
+        type: string
+
+      - name: dateDisplay
+        label: Display Date
+        type: string
+
+      - name: category
+        label: Category
+        type: string
+
+      - name: image
+        label: Photograph
+        type: image
+
+      - name: description
+        label: செய்தி விபரம்
+        type: text
+        required: true
+
+      - name: detailsUrl
+        label: Details Link
+        type: string
+
+      - name: readMoreText
+        label: Read More Text
+        type: string
