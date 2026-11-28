@@ -1,0 +1,13 @@
+[
+  {
+    "id": 999,
+    "titleTamil": "பரிசோதனை செய்தி",
+    "titleEnglish": "Test News",
+    "date": "2026-11-28",
+    "dateDisplay": "28 November 2026",
+    "category": "Academic",
+    "description": "இது இணையத்தள பராமரிப்பு முறையைப் பரிசோதிப்பதற்கான செய்தியாகும்.",
+    "detailsUrl": "news.html",
+    "readMoreText": "முழு விபரம் வாசிக்க"
+  }
+]
