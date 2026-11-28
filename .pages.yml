@@ -180,3 +180,64 @@ content:
       - name: link
         label: "மேலதிக விபரம் | Details Link"
         type: string
+
+
+  - name: gallery
+    label: "புகைப்படத் தொகுப்பு | Gallery"
+    type: file
+    path: public/content/gallery.json
+    format: json
+    list: true
+
+    fields:
+      - name: titleEnglish
+        label: "Album Title"
+        type: string
+        required: true
+
+      - name: titleTamil
+        label: "தமிழ் தலைப்பு"
+        type: string
+
+      - name: pretitle
+        label: "Section Label"
+        type: string
+
+      - name: description
+        label: "Album Description"
+        type: text
+
+      - name: alternateBackground
+        label: "Alternate Background"
+        type: boolean
+
+      - name: photos
+        label: "புகைப்படங்கள் | Photographs"
+        type: object
+        list: true
+
+        fields:
+          - name: image
+            label: "புகைப்படம் | Photograph"
+            type: image
+            required: true
+
+          - name: title
+            label: "Photo Title"
+            type: string
+
+          - name: category
+            label: "Category"
+            type: string
+
+          - name: caption
+            label: "Photo Caption"
+            type: text
+
+          - name: alt
+            label: "Image Description"
+            type: string
+
+          - name: imageOnly
+            label: "Image Only"
+            type: boolean

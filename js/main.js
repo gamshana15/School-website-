@@ -149,18 +149,34 @@ const normalizePath = (path) => {
   }
 
   // Attach lightbox trigger to all gallery items
-  const galleryItems = document.querySelectorAll('.lightbox-trigger');
-  galleryItems.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      e.preventDefault();
-      const imgSrc = item.getAttribute('data-image') || item.getAttribute('href') || (item.querySelector('img') && item.querySelector('img').src);
-      const caption = item.getAttribute('data-caption') || item.getAttribute('title') || (item.querySelector('.gallery-title') && item.querySelector('.gallery-title').textContent);
-      if (imgSrc && lightboxModal) {
-        lightboxModal.classList.toggle('image-only', item.hasAttribute('data-image-only'));
-        openLightbox(imgSrc, caption);
-      }
-    });
-  });
+// Lightbox support for static and dynamically loaded images
+document.addEventListener('click', (e) => {
+    const item = e.target.closest('.lightbox-trigger');
+
+    if (!item || !lightboxModal) return;
+
+    const imgSrc =
+        item.getAttribute('data-image') ||
+        item.getAttribute('href') ||
+        item.querySelector('img')?.src;
+
+    const caption =
+        item.getAttribute('data-caption') ||
+        item.getAttribute('title') ||
+        item.querySelector('.gallery-title')?.textContent ||
+        '';
+
+    if (!imgSrc) return;
+
+    e.preventDefault();
+
+    lightboxModal.classList.toggle(
+        'image-only',
+        item.hasAttribute('data-image-only')
+    );
+
+    openLightbox(imgSrc, caption);
+});
 
   // 3. Dynamic Footer Year
   const yearEls = document.querySelectorAll('.current-year');
