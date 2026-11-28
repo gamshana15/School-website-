@@ -204,6 +204,24 @@ content:
         type: string
         required: true
 
+
+      - name: gallerySection
+        label: "பிரிவு | Gallery Section"
+        type: select
+        required: true
+        default: "Ceremonial Archives"
+        options:
+          values:
+            - "Ceremonial Archives"
+            - "Achievements"
+            - "Press Photos"
+
+      - name: updatedDate
+        label: "புதுப்பித்த திகதி | Last Updated Date"
+        type: date
+        options:
+          format: yyyy-MM-dd
+
       - name: photos
         label: "புகைப்படங்கள் | Photographs"
         type: object
@@ -269,6 +287,13 @@ content:
       - name: description
         label: "விபரம் | Description"
         type: text
+
+
+      - name: publishedDate
+        label: "வெளியிட்ட திகதி | Published Date"
+        type: date
+        options:
+          format: yyyy-MM-dd
 
       - name: file
         label: "ஆவணம் | PDF Document"

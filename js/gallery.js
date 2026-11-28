@@ -4,6 +4,12 @@
  * Kondavil Ramakrishna Maha Vidyalayam
  */
 
+const gallerySections = [
+    'Ceremonial Archives',
+    'Achievements',
+    'Press Photos'
+];
+
 function escapeGalleryHTML(value) {
     return String(value ?? '').replace(/[&<>"']/g, char => ({
         '&': '&amp;',
@@ -26,6 +32,7 @@ function safeGalleryUrl(value) {
         ) {
             return escapeGalleryHTML(url.href);
         }
+
     } catch (error) {
         console.warn('Invalid gallery image:', value);
     }
@@ -45,7 +52,6 @@ function renderGalleryPhoto(photo) {
         photo.caption || photo.title
     );
 
-    // Automatically generate alternative text
     const alt = escapeGalleryHTML(
         photo.caption ||
         photo.title ||
@@ -86,6 +92,7 @@ function renderGalleryPhoto(photo) {
 }
 
 function renderGalleryAlbum(album, index) {
+
     const photos = Array.isArray(album.photos)
         ? album.photos
         : [];
@@ -115,7 +122,62 @@ function renderGalleryAlbum(album, index) {
     `;
 }
 
+function getGallerySection(album) {
+
+    if (gallerySections.includes(album.gallerySection)) {
+        return album.gallerySection;
+    }
+
+    if (album.titleEnglish === 'Media Highlights') {
+        return 'Achievements';
+    }
+
+    if (
+        album.titleEnglish ===
+        'Newspaper Articles & Publications'
+    ) {
+        return 'Press Photos';
+    }
+
+    return 'Ceremonial Archives';
+}
+
+function getGalleryDate(album) {
+    return Date.parse(album.updatedDate || '') || 0;
+}
+
+function renderGalleryGroup(section, albums) {
+
+    const group = albums.filter(
+        album => getGallerySection(album) === section
+    );
+
+    if (section === 'Ceremonial Archives') {
+        group.sort(
+            (a, b) => getGalleryDate(b) - getGalleryDate(a)
+        );
+    }
+
+    const heading = section === 'Ceremonial Archives'
+        ? ''
+        : `
+            <div class="container" style="padding-top:2rem;">
+                <div class="section-header">
+                    <span class="section-pretitle">
+                        ${escapeGalleryHTML(section)}
+                    </span>
+                </div>
+            </div>
+        `;
+
+    return `
+        ${heading}
+        ${group.map(renderGalleryAlbum).join('')}
+    `;
+}
+
 async function loadSchoolGallery() {
+
     const container = document.getElementById(
         'school-gallery-container'
     );
@@ -123,6 +185,7 @@ async function loadSchoolGallery() {
     if (!container) return;
 
     try {
+
         const response = await fetch('/content/gallery.json');
 
         if (!response.ok) {
@@ -144,11 +207,12 @@ async function loadSchoolGallery() {
             return;
         }
 
-        container.innerHTML = albums
-            .map(renderGalleryAlbum)
+        container.innerHTML = gallerySections
+            .map(section => renderGalleryGroup(section, albums))
             .join('');
 
     } catch (error) {
+
         console.error('Unable to load school gallery:', error);
 
         container.innerHTML = `

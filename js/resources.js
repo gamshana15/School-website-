@@ -29,6 +29,7 @@ function escapeResourceHTML(value) {
 }
 
 function safeResourceUrl(value) {
+
     if (!value) return '';
 
     try {
@@ -49,6 +50,10 @@ function safeResourceUrl(value) {
     return '';
 }
 
+function getResourceDate(item) {
+    return Date.parse(item.publishedDate || '') || 0;
+}
+
 function renderResourceCard(item) {
 
     const file = safeResourceUrl(item.file);
@@ -65,6 +70,7 @@ function renderResourceCard(item) {
             </div>
 
             <div class="doc-info">
+
                 <h4 class="doc-title">
                     ${escapeResourceHTML(item.title)}
                 </h4>
@@ -72,9 +78,11 @@ function renderResourceCard(item) {
                 <p class="doc-meta">
                     ${escapeResourceHTML(item.description)}
                 </p>
+
             </div>
 
             <div class="doc-btn">
+
                 <a href="${file}"
                    target="_blank"
                    rel="noopener noreferrer"
@@ -82,6 +90,7 @@ function renderResourceCard(item) {
                    class="btn btn-sm btn-primary">
                     Download PDF 📥
                 </a>
+
             </div>
 
         </div>
@@ -109,6 +118,10 @@ async function loadSchoolResources() {
         if (!Array.isArray(resources)) {
             throw new Error('Invalid resource data');
         }
+
+        resources.sort(
+            (a, b) => getResourceDate(b) - getResourceDate(a)
+        );
 
         const cards = resources
             .map(renderResourceCard)
