@@ -58,5 +58,11 @@
     "category": "Infrastructure",
     "description": "பாடசாலை உட்கட்டமைப்பு தேவைகள்: Official record of classroom improvements, laboratory upgrades, and sports amenities needed.",
     "file": "/documents/schoolNeeds.pdf"
+  },
+  {
+    "title": "new",
+    "category": "Application Forms",
+    "description": "apply",
+    "file": "/documents/chapter-5-electrical-properties-of-materials-1.pdf"
   }
 ]
