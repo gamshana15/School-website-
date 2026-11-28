@@ -117,7 +117,9 @@ async function loadSchoolNews() {
       throw new Error('Invalid news data format');
     }
 
-    schoolNews = data;
+   schoolNews = data.sort((a, b) => 
+  new Date(b.date) - new Date(a.date)
+);
 
     renderNewsCards('home-news-container', 3);
     renderNewsCards('all-news-container');
