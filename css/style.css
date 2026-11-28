@@ -2302,3 +2302,104 @@ audio {
   color: var(--text-muted);
   margin-top: 0.2rem;
 }
+/* =========================================
+   CMS SCHOOL ANNOUNCEMENTS
+   ========================================= */
+
+.school-announcements {
+  width: 100%;
+  background: var(--school-primary-dark);
+  color: var(--text-on-primary);
+  border-bottom: 2px solid var(--school-secondary);
+  padding: 0.25rem 0;
+}
+
+.school-announcements[hidden] {
+  display: none !important;
+}
+
+.announcement-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.1rem 0;
+}
+
+.announcement-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
+  gap: 0.2rem 0.65rem;
+  overflow-wrap: anywhere;
+}
+
+.announcement-icon {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.announcement-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--school-secondary);
+  margin: 0;
+}
+
+.announcement-tamil {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--school-secondary-light);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.announcement-english {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.announcement-link {
+  font-size: 0.75rem;
+  color: var(--school-secondary-light);
+  text-decoration: underline;
+  margin: 0;
+}
+
+.announcement-link:hover {
+  color: var(--school-secondary);
+}
+
+.announcement-important .announcement-label {
+  color: var(--school-secondary);
+  font-weight: 800;
+}
+
+.announcement-item + .announcement-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 600px) {
+  .announcement-item {
+    align-items: flex-start;
+  }
+
+  .announcement-content {
+    gap: 0.15rem 0.4rem;
+  }
+
+  .announcement-tamil {
+    font-size: 0.8rem;
+  }
+
+  .announcement-english {
+    font-size: 0.7rem;
+  }
+}
+
+
+
