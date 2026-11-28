@@ -135,3 +135,48 @@ content:
       - name: linkText
         label: "Button Text"
         type: string
+
+
+
+  - name: announcements
+    label: "அறிவித்தல்கள் | Announcements"
+    type: file
+    path: public/content/announcements.json
+    format: json
+    list: true
+
+    fields:
+      - name: titleTamil
+        label: "தமிழ் அறிவித்தல்"
+        type: text
+        required: true
+
+      - name: titleEnglish
+        label: "English Announcement"
+        type: text
+
+      - name: publishDate
+        label: "வெளியிடும் திகதி | Publish Date"
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+
+      - name: expiryDate
+        label: "முடிவுத் திகதி | Expiry Date"
+        type: date
+        options:
+          format: yyyy-MM-dd
+
+      - name: important
+        label: "முக்கிய அறிவித்தல் | Important"
+        type: boolean
+
+      - name: active
+        label: "Show Announcement"
+        type: boolean
+        default: true
+
+      - name: link
+        label: "மேலதிக விபரம் | Details Link"
+        type: string
