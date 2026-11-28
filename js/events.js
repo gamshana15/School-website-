@@ -1,149 +1,221 @@
+
 /**
- * ==========================================================================
- * KONDAVIL RAMAKRISHNA MAHA VIDYALAYAM - EVENTS DATA & HANDLER
- * ==========================================================================
- * TEACHER GUIDE: HOW TO ADD OR EDIT A SCHOOL EVENT:
- * 1. Add a new event object to the `schoolEvents` list below.
- * 2. Update `day`, `month`, `year`, `titleTamil`, `titleEnglish`, `time`,
- *    `venue`, `description`, and `status` ("upcoming" or "past").
- * 3. Save the file.
- * ==========================================================================
+ * KONDAVIL RAMAKRISHNA MAHA VIDYALAYAM
+ * CMS Events Loader and Display Handler
+ *
+ * Events content: public/content/events.json
+ * Content editor: Pages CMS
  */
 
-const schoolEvents = [
-  {
-    id: 1,
-    day: "7",
-    month: "AUG",
-    year: "2026",
-    titleTamil: "வருடாந்த பரிசளிப்பு விழா",
-    titleEnglish: "Annual Prize Giving",
-    time: "09:00 AM - 01:30 PM",
-    venue: "School Main Auditorium, Kondavil",
-    category: "Academic",
-    status: "past",
-    description: "2026 ஆம் ஆண்டிற்கான கல்வியாண்டு பரிசளிப்பு வைபவம் பிரமுகர்கள் முன்னிலையில் இடம்பெற்றது.",
-    link: "documents/prize day report 2026.pdf",
-    linkText: "View Report"
-  },
-  {
-    id: 2,
-    day: "28",
-    month: "OCT",
-    year: "2026",
-    titleTamil: "சரஸ்வதி பூசை மற்றும் விஜயதசமி கலை நிகழ்வுகள்",
-    titleEnglish: "Saraswathi Pooja & Vijayadasami Cultural Festivities",
-    time: "10:00 AM - 1:00 PM",
-    venue: "School Shrine & Auditorium",
-    category: "Cultural",
-    status: "past",
-    description: "கலைமகளின் அருளாசியோடு பாடசாலையில் சரஸ்வதி பூசை சிறப்பு வழிபாடுகளும், மாணவர்களின் பண்ணிசை, நடன நிகழ்வுகளும் இடம்பெற்றன.",
-    link: "school-life.html",
-    linkText: "View Activities"
-  },
-  {
-    id: 3,
-    day: "18",
-    month: "NOV",
-    year: "2026",
-    titleTamil: "மூன்றாம் தவணை இறுதிப் பரீட்சைகள் ஆரம்பம்",
-    titleEnglish: "Third Term Final Evaluation Examinations",
-    time: "08:00 AM - 01:30 PM",
-    venue: "All Classrooms (Grades 1 - 13)",
-    category: "Examinations",
-    status: "past",
-    description: "மாணவர்களின் கல்வி அடைவுகளை மதிப்பீடு செய்யும் 2024 ஆம் ஆண்டிற்கான மூன்றாம் தவணைப் பரீட்சைகள் ஆரம்பமாகின்றன.",
-    link: "academics.html",
-    linkText: "Academic Info"
-  },
-  {
-    id: 4,
-    day: "15",
-    month: "JAN",
-    year: "2026",
-    titleTamil: "தைப்பொங்கல் பெருவிழா மற்றும் பாரம்பரிய பண்பாட்டு நிகழ்வுகள்",
-    titleEnglish: "Thai Pongal Cultural Festival & Traditions",
-    time: "08:00 AM - 11:30 AM",
-    venue: "School Grounds & Courtyard",
-    category: "Cultural",
-    status: "past",
-    description: "உழவர் பெருநாளை முன்னிட்டு பாடசாலை சமூகத்தின் கூட்டுப் பொங்கல் வழிபாடும் மாணவர்களின் கோலப்போட்டி, கலை நிகழ்வுகளும் நடைபெற்றன.",
-    link: "school-life.html",
-    linkText: "School Life"
-  },
-  {
-    id: 5,
-    day: "20",
-    month: "FEB",
-    year: "2026",
-    titleTamil: "வருடாந்த இல்ல மெய்வல்லுநர் விளையாட்டுப் போட்டி",
-    titleEnglish: "Annual Inter-House Athletic & Sports Meet",
-    time: "01:00 PM - 06:00 PM",
-    venue: "School Sports Ground, Kondavil East",
-    category: "Sports",
-    status: "past",
-    description: "மாணவர்களின் விளையாட்டுத் திறமைகளை வெளிக்கொணரும் வருடாந்த இல்ல மெய்வல்லுநர் இறுதிப் போட்டிகள் மற்றும் பரிசளிப்பு விழா.",
-    link: "school-life.html",
-    linkText: "Sports Info"
-  },
-  {
-    id: 6,
-    day: "6",
-    month: "OCT",
-    year: "2026",
-    titleTamil: "ஆசிரியர் தின விழா மற்றும் மாணவர் கலை நிகழ்வுகள்",
-    titleEnglish: "Teachers' Day Celebration",
-    time: "08:30 AM - 12:30 AM",
-    venue: "Vidyalayam Main Hall",
-    category: "School Event",
-    status: "past",
-    description: "மாணவர்கள் தங்கள் ஆசிரியர்களுக்கு நன்றி தெரிவித்து, அவர்களின் அர்ப்பணிப்பையும் வழிகாட்டலையும் போற்றும் சிறப்பு நிகழ்வு. கலை நிகழ்ச்சிகளுடன் ஆசிரியர்கள் கௌரவிக்கப்படுகின்றனர்.",
-    link: "gallery.html",
-    linkText: "Gallery"
-  }
-];
+let schoolEvents = [];
 
+// Protect HTML from unsafe content.
+function escapeEventHTML(value) {
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[char]));
+}
+
+// Allow safe website and external links.
+function safeEventUrl(value) {
+  if (!value) return '';
+
+  try {
+    const url = new URL(value, document.baseURI);
+
+    if (url.protocol === 'https:' ||
+        url.protocol === 'http:') {
+      return escapeEventHTML(url.href);
+    }
+  } catch (error) {
+    console.warn('Invalid event URL:', value);
+  }
+
+  return '';
+}
+
+// Get today's date in Sri Lankan time.
+function getSchoolToday() {
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Colombo',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).formatToParts(new Date());
+
+  const values = Object.fromEntries(
+    parts.map(part => [part.type, part.value])
+  );
+
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+// Determine event status automatically.
+function getEventStatus(date) {
+  return date >= getSchoolToday()
+    ? 'upcoming'
+    : 'past';
+}
+
+// Convert date into the existing card format.
+function getEventDateParts(value) {
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return { day: '', month: '', year: '' };
+  }
+
+  return {
+    day: date.getUTCDate(),
+    month: date.toLocaleString('en-GB', {
+      month: 'short',
+      timeZone: 'UTC'
+    }).toUpperCase(),
+    year: date.getUTCFullYear()
+  };
+}
+
+// Render events using the existing design.
 function renderEventsCards(containerId, filterStatus) {
   const container = document.getElementById(containerId);
+
   if (!container) return;
 
-  const items = filterStatus 
-    ? schoolEvents.filter(e => e.status === filterStatus)
+  const items = filterStatus
+    ? schoolEvents.filter(
+        ev => getEventStatus(ev.date) === filterStatus
+      )
     : schoolEvents;
 
   if (items.length === 0) {
     container.innerHTML = `
       <div style="grid-column: 1/-1; text-align: center; padding: 2rem; background: #fff; border-radius: 8px; border: 1px solid var(--border-color);">
-        <p style="color: var(--text-secondary); font-size: 1rem;">தற்போது புதிய நிகழ்வுகள் அறிவிக்கப்படவில்லை. நிகழ்வுகள் பற்றிய உத்தியோகபூர்வ தகவல்கள் விரைவில் இங்கு பதிவேற்றப்படும்.</p>
-        <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem;">No new event scheduled at the moment. Please check back for official updates.</p>
+        <p style="color: var(--text-secondary); font-size: 1rem;">
+          தற்போது புதிய நிகழ்வுகள் அறிவிக்கப்படவில்லை. நிகழ்வுகள் பற்றிய உத்தியோகபூர்வ தகவல்கள் விரைவில் இங்கு பதிவேற்றப்படும்.
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem;">
+          No new event scheduled at the moment. Please check back for official updates.
+        </p>
       </div>
     `;
     return;
   }
 
-  container.innerHTML = items.map(ev => `
-    <div class="card event-card" style="display:flex; flex-direction:row; align-items:stretch;">
-      <div style="background:var(--school-primary); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.25rem; min-width:90px; text-align:center; border-right:3px solid var(--school-secondary);">
-        <span style="font-size:1.75rem; font-weight:800; font-family:var(--font-heading); line-height:1;">${ev.day}</span>
-        <span style="font-size:0.875rem; font-weight:700; color:var(--school-secondary); text-transform:uppercase; margin-top:0.25rem;">${ev.month}</span>
-        <span style="font-size:0.75rem; opacity:0.85;">${ev.year}</span>
-      </div>
-      <div class="card-body" style="padding:1.25rem;">
-        <div class="card-meta">
-          <span class="badge-tag">${ev.category}</span>
-          <span style="font-size:0.8125rem; color:var(--text-muted);">🕒 ${ev.time}</span>
+  container.innerHTML = items.map(ev => {
+    const { day, month, year } = getEventDateParts(ev.date);
+    const link = safeEventUrl(ev.link);
+
+    return `
+      <div class="card event-card" style="display:flex; flex-direction:row; align-items:stretch;">
+
+        <div style="background:var(--school-primary); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.25rem; min-width:90px; text-align:center; border-right:3px solid var(--school-secondary);">
+
+          <span style="font-size:1.75rem; font-weight:800; font-family:var(--font-heading); line-height:1;">
+            ${day}
+          </span>
+
+          <span style="font-size:0.875rem; font-weight:700; color:var(--school-secondary); text-transform:uppercase; margin-top:0.25rem;">
+            ${month}
+          </span>
+
+          <span style="font-size:0.75rem; opacity:0.85;">
+            ${year}
+          </span>
+
         </div>
-        <h3 class="card-title" style="font-size:1.15rem; margin-bottom:0.25rem;">${ev.titleTamil}</h3>
-        <p style="font-size:0.85rem; color:var(--school-primary); font-weight:600; margin-bottom:0.5rem;">${ev.titleEnglish}</p>
-        <p style="font-size:0.8125rem; color:var(--text-muted); margin-bottom:0.65rem;">📍 ${ev.venue}</p>
-        <p class="card-text" style="font-size:0.875rem; margin-bottom:0.75rem;">${ev.description}</p>
-        ${ev.link ? `<a href="${ev.link}" class="btn btn-sm btn-outline-primary" style="align-self:flex-start;">${ev.linkText} →</a>` : ''}
+
+        <div class="card-body" style="padding:1.25rem;">
+
+          <div class="card-meta">
+
+            <span class="badge-tag">
+              ${escapeEventHTML(ev.category)}
+            </span>
+
+            <span style="font-size:0.8125rem; color:var(--text-muted);">
+              🕒 ${escapeEventHTML(ev.time)}
+            </span>
+
+          </div>
+
+          <h3 class="card-title" style="font-size:1.15rem; margin-bottom:0.25rem;">
+            ${escapeEventHTML(ev.titleTamil)}
+          </h3>
+
+          <p style="font-size:0.85rem; color:var(--school-primary); font-weight:600; margin-bottom:0.5rem;">
+            ${escapeEventHTML(ev.titleEnglish)}
+          </p>
+
+          <p style="font-size:0.8125rem; color:var(--text-muted); margin-bottom:0.65rem;">
+            📍 ${escapeEventHTML(ev.venue)}
+          </p>
+
+          <p class="card-text" style="font-size:0.875rem; margin-bottom:0.75rem;">
+            ${escapeEventHTML(ev.description)}
+          </p>
+
+          ${link ? `
+            <a href="${link}"
+               class="btn btn-sm btn-outline-primary"
+               style="align-self:flex-start;">
+              ${escapeEventHTML(ev.linkText || 'Read More')} →
+            </a>
+          ` : ''}
+
+        </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderEventsCards('home-events-container');
-  renderEventsCards('all-events-container');
-});
+// Load events from CMS-managed JSON.
+async function loadSchoolEvents() {
+  try {
+    const response = await fetch('/content/events.json');
+
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      throw new Error('Invalid events data format');
+    }
+
+    const today = getSchoolToday();
+
+    const upcoming = data
+      .filter(ev => ev.date >= today)
+      .sort((a, b) => a.date.localeCompare(b.date));
+
+    const past = data
+      .filter(ev => ev.date < today)
+      .sort((a, b) => b.date.localeCompare(a.date));
+
+    // Upcoming events first, followed by past events.
+    schoolEvents = [...upcoming, ...past];
+
+    renderEventsCards('home-events-container');
+    renderEventsCards('all-events-container');
+
+  } catch (error) {
+    console.error('Unable to load school events:', error);
+
+    ['home-events-container', 'all-events-container']
+      .forEach(id => {
+        const container = document.getElementById(id);
+
+        if (container) {
+          container.textContent =
+            'நிகழ்வுகளை ஏற்ற முடியவில்லை. Unable to load events.';
+        }
+      });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadSchoolEvents);

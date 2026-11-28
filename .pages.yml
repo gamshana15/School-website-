@@ -66,3 +66,72 @@ content:
       - name: readMoreText
         type: string
         hidden: true
+
+
+
+  - name: events
+    label: "நிகழ்வுகள் | Events"
+    type: file
+    path: public/content/events.json
+    format: json
+    list: true
+
+    fields:
+      - name: id
+        type: number
+        hidden: true
+
+      - name: titleTamil
+        label: "தமிழ் தலைப்பு"
+        type: string
+        required: true
+
+      - name: titleEnglish
+        label: "English Title"
+        type: string
+
+      - name: date
+        label: "திகதி | Date"
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+
+      - name: time
+        label: "நேரம் | Time"
+        type: string
+
+      - name: venue
+        label: "இடம் | Venue"
+        type: string
+
+      - name: category
+        label: "பிரிவு | Category"
+        type: select
+        required: true
+        options:
+          values:
+            - "Academic"
+            - "Cultural"
+            - "Examinations"
+            - "Sports"
+            - "School Event"
+            - "Welfare"
+            - "Other"
+
+      - name: status
+        type: string
+        hidden: true
+
+      - name: description
+        label: "நிகழ்வு விபரம்"
+        type: text
+        required: true
+
+      - name: link
+        label: "மேலதிக விபரம் | Details Link"
+        type: string
+
+      - name: linkText
+        label: "Button Text"
+        type: string
