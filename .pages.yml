@@ -1,6 +1,15 @@
+
 media:
-  input: images
-  output: /images
+  - name: images
+    label: "புகைப்படங்கள் | Photographs"
+    input: images
+    output: /images
+
+  - name: documents
+    label: "PDF ஆவணங்கள் | PDF Documents"
+    input: documents
+    output: /documents
+    extensions: [pdf]
 
 content:
   - name: news
@@ -53,6 +62,8 @@ content:
       - name: image
         label: "புகைப்படம் | Photograph"
         type: image
+        options:
+          media: images
 
       - name: description
         label: "செய்தி விபரம்"
@@ -66,7 +77,6 @@ content:
       - name: readMoreText
         type: string
         hidden: true
-
 
 
   - name: events
@@ -137,7 +147,6 @@ content:
         type: string
 
 
-
   - name: announcements
     label: "அறிவித்தல்கள் | Announcements"
     type: file
@@ -182,7 +191,7 @@ content:
         type: string
 
 
-    - name: gallery
+  - name: gallery
     label: "புகைப்படத் தொகுப்பு | Gallery"
     type: file
     path: public/content/gallery.json
@@ -205,6 +214,8 @@ content:
             label: "புகைப்படம் | Photograph"
             type: image
             required: true
+            options:
+              media: images
 
           - name: title
             label: "புகைப்படத் தலைப்பு | Photo Title"
@@ -222,3 +233,48 @@ content:
             label: "Image Only"
             type: boolean
             default: false
+
+
+  - name: resources
+    label: "ஆவணங்கள் | Resources"
+    type: file
+    path: public/content/resources.json
+    format: json
+    list: true
+
+    fields:
+      - name: title
+        label: "ஆவணத் தலைப்பு | Document Title"
+        type: string
+        required: true
+
+      - name: category
+        label: "பிரிவு | Category"
+        type: select
+        required: true
+        options:
+          values:
+            - "Publications"
+            - "Development Plans"
+            - "Prize Day Reports"
+            - "School History"
+            - "Staff Directory"
+            - "Student Activities"
+            - "Student Welfare"
+            - "Infrastructure"
+            - "Application Forms"
+            - "Educational Resources"
+            - "Other"
+
+      - name: description
+        label: "விபரம் | Description"
+        type: text
+
+      - name: file
+        label: "ஆவணம் | PDF Document"
+        type: file
+        required: true
+        options:
+          media: documents
+          extensions: [pdf]
+          rename: safe

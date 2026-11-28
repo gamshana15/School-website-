@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Diamond Jubilee Souvenir (வைரவிழா மலர்)",
+    "category": "Publications",
+    "description": "Special commemorative publication celebrating the school's historic Diamond Jubilee milestone.",
+    "file": "/documents/prizeBook.pdf"
+  },
+  {
+    "title": "Five-Year Strategic Development Plan (2025–2029)",
+    "category": "Development Plans",
+    "description": "ஐந்தாண்டு மூலோபாய அபிவிருத்தி திட்டம்: Institutional roadmap for academic excellence and campus expansion.",
+    "file": "/documents/five-year-plan.pdf"
+  },
+  {
+    "title": "Annual Prize Day Official Report 2026",
+    "category": "Prize Day Reports",
+    "description": "வருடாந்த பரசளிப்பு விழா அறிக்கை 2026: Comprehensive review of student academic honors, zonal sports results, and achievements.",
+    "file": "/documents/prize day report 2026.pdf"
+  },
+  {
+    "title": "Annual School Development Plan 2024",
+    "category": "Development Plans",
+    "description": "பாடசாலை வருடாந்த அபிவிருத்தி திட்டம் 2024: Detailed academic schedule, committee milestones, and financial allocations.",
+    "file": "/documents/schoolPlan2024.pdf"
+  },
+  {
+    "title": "Annual Prize Day Official Report 2024",
+    "category": "Prize Day Reports",
+    "description": "வருடாந்த பரிசளிப்பு விழா அறிக்கை 2024: Comprehensive review of student academic honors, zonal sports results, and achievements.",
+    "file": "/documents/prizeReport.pdf"
+  },
+  {
+    "title": "School History & Archival Overview",
+    "category": "School History",
+    "description": "பாடசாலை வரலாற்றுச் சுருக்கம்: Chronicles from the early inception through decades of educational service in Jaffna.",
+    "file": "/documents/schoolHistory.pdf"
+  },
+  {
+    "title": "Teaching Staff & Administrative Directory",
+    "category": "Staff Directory",
+    "description": "ஆசிரியர் குழாம் மற்றும் உத்தியோகத்தர் விபரம்: Certified roster of academic faculty, section heads, and support personnel.",
+    "file": "/documents/teachers.pdf"
+  },
+  {
+    "title": "Co-Curricular & Student Activity Committee",
+    "category": "Student Activities",
+    "description": "செயற்பாட்டுக் குழு விபரம்: Organizational framework overseeing cultural societies, sports teams, and student clubs.",
+    "file": "/documents/activityCommittee.pdf"
+  },
+  {
+    "title": "Student Welfare & Social Assistance Scheme",
+    "category": "Student Welfare",
+    "description": "மாணவர் சமூக நலன்புரி உதவிக் குழு திட்டம்: Guidelines and provisions supporting students in need with essential educational aids.",
+    "file": "/documents/socialAssistant.pdf"
+  },
+  {
+    "title": "School Infrastructure & Development Priorities",
+    "category": "Infrastructure",
+    "description": "பாடசாலை உட்கட்டமைப்பு தேவைகள்: Official record of classroom improvements, laboratory upgrades, and sports amenities needed.",
+    "file": "/documents/schoolNeeds.pdf"
+  }
+]
