@@ -2,6 +2,7 @@
 /**
  * CMS Gallery Management
  * Kondavil Ramakrishna Maha Vidyalayam
+ * Automatic WebP thumbnail support
  */
 
 const gallerySections = [
@@ -41,9 +42,15 @@ function safeGalleryUrl(value) {
 }
 
 function renderGalleryPhoto(photo) {
+
     const image = safeGalleryUrl(photo.image);
 
     if (!image) return '';
+
+    // Use optimized thumbnail when available.
+    // Otherwise, use the original photograph.
+    const thumbnail =
+        safeGalleryUrl(photo.thumbnail) || image;
 
     const title = escapeGalleryHTML(photo.title);
     const category = escapeGalleryHTML(photo.category);
@@ -64,10 +71,11 @@ function renderGalleryPhoto(photo) {
              data-caption="${caption}"
              ${photo.imageOnly ? 'data-image-only' : ''}>
 
-            <img src="${image}"
+            <img src="${thumbnail}"
                  alt="${alt}"
                  class="gallery-thumb"
-                 loading="lazy" />
+                 loading="lazy"
+                 decoding="async" />
 
             ${!photo.imageOnly && (title || category) ? `
                 <div class="gallery-overlay">
@@ -210,6 +218,33 @@ async function loadSchoolGallery() {
         container.innerHTML = gallerySections
             .map(section => renderGalleryGroup(section, albums))
             .join('');
+
+        // Fall back to original photographs if
+        // optimized thumbnails fail to load.
+        container.querySelectorAll('.gallery-thumb')
+            .forEach(img => {
+
+                const useOriginal = () => {
+
+                    const original = img
+                        .closest('.gallery-item')
+                        ?.getAttribute('data-image');
+
+                    if (original && img.src !== original) {
+                        img.src = original;
+                    }
+                };
+
+                img.addEventListener(
+                    'error',
+                    useOriginal,
+                    { once: true }
+                );
+
+                if (img.complete && img.naturalWidth === 0) {
+                    useOriginal();
+                }
+            });
 
     } catch (error) {
 
